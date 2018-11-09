@@ -1,4 +1,8 @@
-import x from './test';
+import Search from './models/Search';
 
-console.log(`i imported ${x}`);
-console.log(`testme`);
+// Created a new search query
+const search = new Search('134');
+
+console.log(search);
+
+search.getResults();
