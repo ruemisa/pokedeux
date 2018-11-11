@@ -15,7 +15,7 @@ const searchCtrl = async () => {
     // Get query from view
     const query = search_view.inputHandler(); 
     // Test
-    // console.log(query);
+    console.log(query);
 
     if (query) {
         // Add search object to state
@@ -36,8 +36,8 @@ const searchCtrl = async () => {
         // TODO: remove console log 
         console.log(state.search.data);
         search_view.displayResult(state.search.data);
-    }
-}
+    };
+};
 
 // SEARCH CONTROLLER 
 el.searchForm.addEventListener('submit', e => {

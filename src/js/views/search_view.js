@@ -2,10 +2,8 @@
 import { el } from '../base';
 
 // To grab user input
-export const inputHandler = () => {
-    el.searchInput.value;
-    // I could leave out curly braces, but I prefer it this way just so it looks contained
-};
+export const inputHandler = () => el.searchInput.value;
+    
 
 // To clear user input once search request is called
 export const clearInput = () => {
@@ -16,8 +14,8 @@ export const clearInput = () => {
 // For element render of pokemon data
 const displayPokemon = pokemon => {
     // Pokemon Type (grass, etc..)
-    const pokemonType = pokemon.types.forEach(pokeType => {
-        `<li class="results__item>${pokeType.name}</li>`
+    const pokemonType = pokemon.types.forEach( type => {
+        `<li class="results__item>${type.name}</li>`
     });
 
     // Rendered markup 
