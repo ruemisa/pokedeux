@@ -8,7 +8,7 @@ class Search {
     }
 
     // HTTP request method
-    async getResults() {
+    async getData() {
         // Convert query to lowercase string
         const searchQuery = this.query.toLowerCase();
 
@@ -24,7 +24,6 @@ class Search {
                 
             // Narrow down to just the data
             this.data = result.data;
-            console.log(this.data);
         } catch (error) {
             console.log(error);
         }
