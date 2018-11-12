@@ -11,6 +11,7 @@ class Pokemon {
     async getPokemon() {
         // Similar to the Search model method
         try {
+
             const result = await axios(`${CORS}${URL}${this.id}`)
             // Get all details needed for view
             this.name = result.data.name;
@@ -25,14 +26,12 @@ class Pokemon {
             this.types = [];
             result.data.types.forEach( t => {
                 this.types.push(t.type.name);
-            })
-
-            console.log(result.data);
+            });   
             
         } catch (error) {
             // TODO: Render HTML when error occurs.
             console.log(error);
-        }
+        };
     }
 }
 
