@@ -1,5 +1,6 @@
-// For Axios to work
 import axios from 'axios';
+
+import { CORS, URL } from '../config';
 
 // To create instances of the search query
 class Search {
@@ -12,11 +13,6 @@ class Search {
         // Convert query to lowercase string
         const searchQuery = this.query.toLowerCase();
 
-        // To handle the CORS issue
-        const CORS = 'https://cors-anywhere.herokuapp.com/';
-        // Poke API url
-        const URL = 'https://pokeapi.co/api/v2/pokemon/';
-
         // To handle errors
         try {
             // Fetching data 
@@ -25,6 +21,7 @@ class Search {
             // Narrow down to just the data
             this.data = result.data;
         } catch (error) {
+            // TODO: Render actual HTML when error occurs
             console.log(error);
         }
     

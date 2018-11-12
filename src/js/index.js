@@ -3,6 +3,7 @@ import { el, displaySpinner, clearSpinner } from './base';
 
 // Models
 import Search from './models/Search';
+import Pokemon from './models/Pokemon';
 
 // Views
 import * as search_view from './views/search_view';
@@ -47,7 +48,10 @@ el.searchForm.addEventListener('submit', e => {
 });
 
 // CURENT POKEMON CONTROLLER
-
+const poke = new Pokemon(134);
+poke.getPokemon();
+// For testing
+console.log(poke);
 
 // SAVED POKEMON CONTROLLER
 

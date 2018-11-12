@@ -10,13 +10,18 @@ export const clearInput = () => {
     el.searchInput.value = '';
 };
 
-// TODO: DOUBLE CHECK ALL RENDERS
 // For element render of pokemon data
 const displayPokemon = pokemon => {
     // Pokemon Type (grass, etc..)
-    const pokemonType = pokemon.types.forEach( type => {
-        `<li class="results__item>${type.name}</li>`
+    // TODO: FIX TYPE LIST
+    let pokemonType = ''; 
+    
+    pokemon.types.forEach( t => {
+        pokemonType = `<li class="results__item>${t.type.name}</li>`;
+        console.log(pokemonType);
     });
+
+    // Check pokemonType
 
     // Rendered markup 
     const markup = `
