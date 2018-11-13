@@ -1,7 +1,7 @@
 import { el } from '../base';
 
 // Render Pokemon Details to UI
-export const renderPokemon = pokemon => {
+export const renderPokemon = (pokemon, isSaved) => {
     // Markup for Details
     const markup = `
         <figure class="pokemon__fig">
@@ -17,7 +17,7 @@ export const renderPokemon = pokemon => {
             </ul>
         </div>
         <button class="pokemon__save btn">
-            Save to Vault
+            ${isSaved ? 'Remove from Vault' : 'Add to Vault'}
         </button>
         <button class="pokemon__btn btn">
             Add

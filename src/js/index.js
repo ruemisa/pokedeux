@@ -11,6 +11,7 @@ import Vault from './models/Vault';
 import * as search_view from './views/search_view';
 import * as pokemon_view from './views/pokemon_view';
 import * as cart_view from './views/cart_view';
+import * as vault_view from './views/vault_view';
 
 // APPLICATION STATE 
 const state = {};
@@ -77,7 +78,8 @@ const pokemonCtrl = async () => {
             await state.pokemon.getPokemon();
             // Render to UI
             clearSpinner();
-            pokemon_view.renderPokemon(state.pokemon);
+            pokemon_view.renderPokemon(state.pokemon, state.vault.isSaved(id));
+
         } catch (error) {
             // TODO: Add HTML for error
             console.log(error);
@@ -132,6 +134,8 @@ el.cart.addEventListener('click', e => {
 //-----------------------------------------//
 //-----------------------------------------//
 //-----------------------------------------//
+// ! Temporary Fix for TESTING
+state.vault = new Vault();
 
 // VAULT CONTROLLER 
 const vaultCtrl = () => {
@@ -147,6 +151,7 @@ const vaultCtrl = () => {
         // Add saved to app state
         const newSavedItem = state.vault.addSaveItem(current, pokemon.name, pokemon.img);
         // Toggle the save button
+        vault_view.toggleSave(true);
 
         // Add to Vault UI
         console.log(state.vault);
@@ -156,6 +161,7 @@ const vaultCtrl = () => {
         // Remove from app state
         state.vault.deleteSaveItem(current);
         // Toggle save button
+        vault_view.toggleSave(false);
 
         // Remove from Vault UI
         console.log(state.vault);
