@@ -9,10 +9,10 @@ import Vault from './models/Vault';
 // Views
 import * as search_view from './views/search_view';
 import * as pokemon_view from './views/pokemon_view';
+import * as vault_view from './views/vault_view';
 
 // APPLICATION STATE 
 const state = {};
-
 // SEARCH CONTROLLER 
 
 // Callback for Search
@@ -47,11 +47,17 @@ const searchCtrl = async () => {
     };
 };
 
+// For Search Controller (search submission)
 el.searchForm.addEventListener('submit', e => {
     // We don't want no reloads man
     e.preventDefault();
     searchCtrl();
 });
+
+//-----------------------------------------//
+//-----------------------------------------//
+//-----------------------------------------//
+
 
 // CURRENT POKEMON CONTROLLER
 const pokemonCtrl = async () => {
@@ -71,11 +77,11 @@ const pokemonCtrl = async () => {
             // Render to UI
             clearSpinner();
             pokemon_view.renderPokemon(state.pokemon);
-
         } catch (error) {
             // TODO: Add HTML for error
             console.log(error);
         };
+        console.log(state.pokemon);
         
     };
 };
@@ -87,6 +93,45 @@ pokemonCtrlEvents.forEach(e => {
     window.addEventListener(e, pokemonCtrl);
 });
 
+// Adding Pokemon to Vault
+el.pokemonRender.addEventListener('click', e => {
+    // Matches class and all child el
+    if (e.target.matches('.pokemon__btn, .pokemon__btn *')) {
+        vaultCtrl();
+    } 
+});
 
-// SAVED POKEMON CONTROLLER
-window.v = new Vault();
+//-----------------------------------------//
+//-----------------------------------------//
+//-----------------------------------------//
+
+
+// VAULT CONTROLLER
+const vaultCtrl = () => {
+    // Create vault list IF no list
+    if (!state.vault) {
+        state.vault = new Vault();
+        // Again, could've just written this in one line, but decided to prepare this for future additions (if ever, i decided to add some extra func on this)
+    }
+
+    // Add Pokemon to Vault List
+    const p = state.pokemon;
+
+    const pokemon = state.vault.addPokemon(p.name, p.weight, p.height);
+
+    vault_view.displayVaultItem(pokemon);
+
+}
+
+// Deleting Pokemon from Vault List
+el.vault.addEventListener('click', e => {
+    // Closest vault item class where click happens
+    const id = e.target.closest('.vault__item').dataset.itemid;
+
+    // Delete button
+    if (e.target.matches('.vault__delete, .vault__delete *')) {
+        // Delete from UI and Vault state
+        state.vault.removePokemon(id);
+        vault_view.deleteVaultItem(id);
+    }
+});

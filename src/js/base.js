@@ -6,7 +6,8 @@ export const el = {
     searchResult: document.querySelector('.results'),
     resultRender: document.querySelector('.results__detail'),
     pokemon: document.querySelector('.pokemon'),
-    pokemonRender: document.querySelector('.pokemon__details')
+    pokemonRender: document.querySelector('.pokemon__details'),
+    vault: document.querySelector('.vault__list')
 };
 
 // For all CSS Classes and IDs

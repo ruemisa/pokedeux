@@ -8,13 +8,13 @@ class Vault {
         this.items = [];
     }
 
-    addPokemon(name, weight, species) {
+    addPokemon(name, weight, height) {
         // Store details in an item to be pushed inside the items array
         const pokemon = {
             id: uniqid(),
             name,
             weight, 
-            species
+            height
         };
         this.items.push(pokemon);
         return pokemon;

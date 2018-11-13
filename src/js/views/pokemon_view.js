@@ -16,6 +16,9 @@ export const renderPokemon = pokemon => {
                 Abilities list here
             </ul>
         </div>
+        <button class="pokemon__btn btn">
+            Add
+        </button>
     `;
 
     el.pokemonRender.insertAdjacentHTML('afterbegin', markup);

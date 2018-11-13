@@ -31,6 +31,9 @@ class Pokemon {
             });
             
             this.img = data.sprites.front_default;
+
+            this.height = data.height;
+            this.weight = data.weight;
             
         } catch (error) {
             // TODO: Render HTML when error occurs.
