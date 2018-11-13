@@ -2,19 +2,20 @@
 import uniqid from 'uniqid';
 
 // List of Pokemon Added
-class Vault {
+class Cart {
     constructor() {
         // This is where pokemon will be stored
         this.items = [];
     }
 
-    addPokemon(name, weight, height) {
+    addPokemon(name, weight, height, img) {
         // Store details in an item to be pushed inside the items array
         const pokemon = {
             id: uniqid(),
             name,
             weight, 
-            height
+            height,
+            img
         };
         this.items.push(pokemon);
         return pokemon;
@@ -30,4 +31,4 @@ class Vault {
 };
 
 
-export default Vault;
+export default Cart;
