@@ -5,6 +5,7 @@ import { el, displaySpinner, clearSpinner } from './base';
 import Search from './models/Search';
 import Pokemon from './models/Pokemon';
 import Cart from './models/Cart';
+import Vault from './models/Vault';
 
 // Views
 import * as search_view from './views/search_view';
@@ -93,14 +94,6 @@ pokemonCtrlEvents.forEach(e => {
     window.addEventListener(e, pokemonCtrl);
 });
 
-// Adding Pokemon to Cart
-el.pokemonRender.addEventListener('click', e => {
-    // Matches class and all child el
-    if (e.target.matches('.pokemon__btn, .pokemon__btn *')) {
-        cartCtrl();
-    } 
-});
-
 //-----------------------------------------//
 //-----------------------------------------//
 //-----------------------------------------//
@@ -133,5 +126,55 @@ el.cart.addEventListener('click', e => {
         // Delete from UI and CART state
         state.cart.removePokemon(id);
         cart_view.deleteCartItem(id);
+    }
+});
+
+//-----------------------------------------//
+//-----------------------------------------//
+//-----------------------------------------//
+
+// VAULT CONTROLLER 
+const vaultCtrl = () => {
+    if (!state.vault) {
+        state.vault = new Vault();
+    }
+    // Stored shown pokemon id into a var to be used
+    const pokemon = state.pokemon
+    const current = pokemon.id;
+    // Two types of states 
+    // 1. When current viewed pokemon is not yet saved to the user's vault
+    if (!state.vault.isSaved(current)) {
+        // Add saved to app state
+        const newSavedItem = state.vault.addSaveItem(current, pokemon.name, pokemon.img);
+        // Toggle the save button
+
+        // Add to Vault UI
+        console.log(state.vault);
+
+    // 2. Current viewed is already saved in vault
+    } else {
+        // Remove from app state
+        state.vault.deleteSaveItem(current);
+        // Toggle save button
+
+        // Remove from Vault UI
+        console.log(state.vault);
+    }
+
+};
+
+//-----------------------------------------//
+//-----------------------------------------//
+//-----------------------------------------//
+
+// EVENT HANDLERS related to Pokemon Object
+el.pokemonRender.addEventListener('click', e => {
+    // Matches class and all child el
+    if (e.target.matches('.pokemon__btn, .pokemon__btn *')) {
+        // Adding Pokemon to Cart
+        cartCtrl();
+    } else if (e.target.matches('.pokemon__save, .pokemon__save *')) {
+        // Saving Pokemon to Vault
+        vaultCtrl();
     }
 });

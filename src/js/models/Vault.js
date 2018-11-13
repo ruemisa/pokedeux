@@ -19,7 +19,7 @@ class Vault {
     deleteSaveItem(id) {
         const i = this.saved.findIndex( el => el.id === id);
 
-        this.items.splice(i, 1);
+        this.saved.splice(i, 1);
     }
     // Method to determine saved state of Pokemon item
     isSaved(id) {
