@@ -4,6 +4,7 @@ import { el, displaySpinner, clearSpinner } from './base';
 // Models
 import Search from './models/Search';
 import Pokemon from './models/Pokemon';
+import Vault from './models/Vault';
 
 // Views
 import * as search_view from './views/search_view';
@@ -56,7 +57,6 @@ el.searchForm.addEventListener('submit', e => {
 const pokemonCtrl = async () => {
     // Store pokemon ID minus hash upon click
     const id = window.location.hash.replace('#', '');
-    console.log(id);
     // Only do it if there is id
     if (id) {
         // Prepare UI for data
@@ -89,4 +89,4 @@ pokemonCtrlEvents.forEach(e => {
 
 
 // SAVED POKEMON CONTROLLER
-
+window.v = new Vault();
