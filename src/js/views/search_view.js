@@ -26,7 +26,9 @@ const displayPokemon = pokemon => {
     // Rendered markup 
     const markup = `
         <a class="results__link results__link--active" href="#${pokemon.id}">
-            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name} sprite" class="results__img"> 
+            <figure class="results__fig">
+                <img src="${pokemon.sprites.front_default}" alt="${pokemon.name} sprite" class="results__img"> 
+            </figure>    
             <div class="results__text">
                 <h4 class="results__name">${pokemon.id} ${pokemon.name}</h4>
                 <ul class="results__list">

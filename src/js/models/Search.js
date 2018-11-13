@@ -20,6 +20,7 @@ class Search {
                 
             // Narrow down to just the data
             this.data = result.data;
+            console.log(this.data);
         } catch (error) {
             // TODO: Render actual HTML when error occurs
             console.log(error);

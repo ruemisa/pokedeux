@@ -7,6 +7,7 @@ import Pokemon from './models/Pokemon';
 
 // Views
 import * as search_view from './views/search_view';
+import * as pokemon_view from './views/pokemon_view';
 
 // APPLICATION STATE 
 const state = {};
@@ -17,8 +18,6 @@ const state = {};
 const searchCtrl = async () => {
     // Get query from view
     const query = search_view.inputHandler(); 
-    // Test
-    console.log(query);
 
     if (query) {
         // Add search object to state
@@ -54,7 +53,6 @@ el.searchForm.addEventListener('submit', e => {
 });
 
 // CURRENT POKEMON CONTROLLER
-// TODO: If searched pokemon, display data automatically even without click
 const pokemonCtrl = async () => {
     // Store pokemon ID minus hash upon click
     const id = window.location.hash.replace('#', '');
@@ -62,16 +60,17 @@ const pokemonCtrl = async () => {
     // Only do it if there is id
     if (id) {
         // Prepare UI for data
-
+        pokemon_view.clearPokemon();
+        displaySpinner(el.pokemon);
         // Create new Pokemon Object
         state.pokemon = new Pokemon(id);
-
         // To handle errors gracefully in case something goes wrong
         try {
             // Get the data
             await state.pokemon.getPokemon();
             // Render to UI
-            console.log(state.pokemon);
+            clearSpinner();
+            pokemon_view.renderPokemon(state.pokemon);
 
         } catch (error) {
             // TODO: Add HTML for error

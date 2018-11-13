@@ -4,7 +4,9 @@ export const el = {
     searchForm: document.querySelector('.search'),
     searchInput: document.querySelector('.search__input'),
     searchResult: document.querySelector('.results'),
-    resultRender: document.querySelector('.results__detail')
+    resultRender: document.querySelector('.results__detail'),
+    pokemon: document.querySelector('.pokemon'),
+    pokemonRender: document.querySelector('.pokemon__details')
 };
 
 // For all CSS Classes and IDs
