@@ -134,9 +134,6 @@ el.cart.addEventListener('click', e => {
 //-----------------------------------------//
 //-----------------------------------------//
 //-----------------------------------------//
-// ! Temporary Fix for TESTING
-state.vault = new Vault();
-vault_view.toggleVaultBtn(state.vault.getSavedCount());
 
 // VAULT CONTROLLER 
 const vaultCtrl = () => {
@@ -184,4 +181,20 @@ el.pokemonRender.addEventListener('click', e => {
         // Saving Pokemon to Vault
         vaultCtrl();
     }
+});
+
+// When the page loads/reloads, restore the vault items
+window.addEventListener('load', () => {
+    state.vault = new Vault();
+
+    // Fill it up with data from storage
+    state.vault.getDataFromStorage();
+
+    // Toggle Vault Menu
+    vault_view.toggleVaultBtn(state.vault.getSavedCount());
+
+    // Render vault to UI
+    state.vault.saved.forEach( item => {
+        vault_view.displaySaved(item);
+    });
 });
