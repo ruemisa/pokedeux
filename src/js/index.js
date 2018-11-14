@@ -136,6 +136,7 @@ el.cart.addEventListener('click', e => {
 //-----------------------------------------//
 // ! Temporary Fix for TESTING
 state.vault = new Vault();
+vault_view.toggleVaultBtn(state.vault.getSavedCount());
 
 // VAULT CONTROLLER 
 const vaultCtrl = () => {
@@ -154,7 +155,7 @@ const vaultCtrl = () => {
         vault_view.toggleSave(true);
 
         // Add to Vault UI
-        console.log(state.vault);
+        vault_view.displaySaved(newSavedItem);
 
     // 2. Current viewed is already saved in vault
     } else {
@@ -164,9 +165,9 @@ const vaultCtrl = () => {
         vault_view.toggleSave(false);
 
         // Remove from Vault UI
-        console.log(state.vault);
+        vault_view.removeSaved(current);
     }
-
+    vault_view.toggleVaultBtn(state.vault.getSavedCount());
 };
 
 //-----------------------------------------//
