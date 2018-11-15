@@ -84,7 +84,6 @@ const pokemonCtrl = async () => {
             // TODO: Add HTML for error
             console.log(error);
         };
-        console.log(state.pokemon);
         
     };
 };
