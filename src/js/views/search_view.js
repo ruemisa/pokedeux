@@ -13,15 +13,14 @@ export const clearInput = () => {
 // For element render of pokemon data
 const displayPokemon = pokemon => {
     // Pokemon Type (grass, etc..)
-    // TODO: FIX TYPE LIST
-    let pokemonType = ''; 
-    
+    let pokemonType = [];
+    // Some pokemon have 2 or more types
     pokemon.types.forEach( t => {
-        pokemonType = `<li class="results__item>${t.type.name}</li>`;
-        console.log(pokemonType);
+        pokemonType.push(`
+        <li>
+            ${t.type.name}
+        </li>`);
     });
-
-    // Check pokemonType
 
     // Rendered markup 
     const markup = `
