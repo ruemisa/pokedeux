@@ -13,13 +13,8 @@ export const clearInput = () => {
 // For element render of pokemon data
 const displayPokemon = pokemon => {
     // Pokemon Type (grass, etc..)
-    let pokemonType = [];
-    // Some pokemon have 2 or more types
-    pokemon.types.forEach( t => {
-        pokemonType.push(`
-        <li>
-            ${t.type.name}
-        </li>`);
+    let pokemonType = pokemon.types.map( t => {
+        return t.type.name;
     });
 
     // Rendered markup 
@@ -31,7 +26,9 @@ const displayPokemon = pokemon => {
             <div class="results__text">
                 <h4 class="results__name">${pokemon.id} ${pokemon.name}</h4>
                 <ul class="results__list">
-                    ${pokemonType}
+                    ${pokemonType.map( t => {
+                        return `<li>${t}</li>`;
+                    }).join('')}
                 </ul>
             </div>
         </a>

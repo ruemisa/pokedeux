@@ -6,52 +6,72 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pokedeux &ndash; Pet Shoppe</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="./resources/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
-    <h1>POKEDEUX PET STORE</h1>
+    <div class="container">
 
-    <!-- SEARCH -->
-    <form class="search">
-        <input type="text" name="pokemon" class="search__input">
-        <button class="btn search__btn">Search</button>
-    </form>
+        <header class="header">
+            <div class="logo-box">
+                <h1 class="header__logo">Logo</h1>
+            </div>
+                    <!-- SEARCH -->
+            <form class="search">
+                <input type="text" name="pokemon" class="search__input">
+                <button class="btn search__btn">Search</button>
+            </form>
 
-    <!-- VAULT MENU -->
-    <div class="vault">
-        <div class="vault__field">
-            Menu
-        </div>
-        <div class="vault__panel">
-            <ul class="vault__list">
-                
+            <!-- VAULT MENU -->
+            <div class="vault">
+                <div class="vault__field">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <div class="vault__panel">
+                    <ul class="vault__list">
+                        
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- SEARCH RESULTS -->
+        <section class="results">
+            <div class="results__detail">
+                <!-- FOR POKEMON SEARCH RESULTS -->
+            </div>
+
+        </section>
+
+        <!-- POKEMON DETAILS -->
+        <section class="pokemon">
+            <div class="pokemon__details">
+                <!-- POKEMON DETAILS UPON CHOOSING RESULT -->
+            </div>
+        </section>
+
+        <!-- CART LIST -->
+        <section class="cart">
+            <h2 class="headline-2">
+                The CART
+            </h2>
+            <ul class="cart__list">
+                <!-- CART LIST ITEMS HERE -->
             </ul>
-        </div>
+        </section>
+
+        <footer class="footer">
+            <nav class="footer__nav">
+                <ul class="footer__nav-list">
+                    <li class="footer__nav-item"><a href="#" class="footer__nav-link"><i class="fab fa-instagram"></i></a></li>
+                    <li class="footer__nav-item"><a href="#" class="footer__nav-link"><i class="fab fa-twitter"></i></a></li>
+                    <li class="footer__nav-item"><a href="#" class="footer__nav-link"><i class="fab fa-facebook-f"></i></a></li>
+                </ul>
+            </nav>
+            <p class="footer__copyright">
+                Copright &copy; 2018 | Pokedeux Pet Store by Ruel Alfonso Misa
+            </p>
+        </footer>
     </div>
 
-    <!-- SEARCH RESULTS -->
-    <section class="results">
-        <div class="results__detail">
-            <!-- FOR POKEMON SEARCH RESULTS -->
-        </div>
-
-    </section>
-
-    <!-- POKEMON DETAILS -->
-    <section class="pokemon">
-        <div class="pokemon__details">
-            <!-- POKEMON DETAILS UPON CHOOSING RESULT -->
-        </div>
-    </section>
-
-    <!-- CART LIST -->
-    <section class="cart">
-        <h2 class="headline-2">
-            The CART
-        </h2>
-        <ul class="cart__list">
-            <!-- CART LIST ITEMS HERE -->
-        </ul>
-    </section>
 </body>
 </html>

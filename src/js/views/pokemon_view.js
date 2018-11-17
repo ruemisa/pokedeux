@@ -3,12 +3,10 @@ import { el } from '../base';
 // Render Pokemon Details to UI
 export const renderPokemon = (pokemon, isSaved) => {
     // For Abilities list
-    let abilities = [];
-    
-    pokemon.abilities.forEach( abil => {
-        // console.log(abil);
-        abilities.push(`<li>${abil}</li>`);
-    })
+
+    let abilities = pokemon.abilities.map( abil => {
+        return abil;
+    });
     
     // Markup for Details
     const markup = `
@@ -21,7 +19,9 @@ export const renderPokemon = (pokemon, isSaved) => {
             <p class="pokemon__para">DEF: ${pokemon.def}</p>
             <p class="pokemon__para">ATT: ${pokemon.att}</p>
             <ul class="pokemon__abilities">
-                ${abilities}
+                ${abilities.map( abil => {
+                    return `<li>${abil}</li>`;
+                }).join('')}
             </ul>
         </div>
         <button class="pokemon__save btn">

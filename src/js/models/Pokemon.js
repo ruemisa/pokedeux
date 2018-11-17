@@ -21,9 +21,8 @@ class Pokemon {
             this.hp = data.stats[5].base_stat;
             this.def = data.stats[3].base_stat;
             this.att = data.stats[4].base_stat;
-            this.abilities = [];
-            data.abilities.forEach( abil => {
-                this.abilities.push(abil.ability.name);
+            this.abilities = data.abilities.map( abil => {
+                return abil.ability.name;
             });
             this.types = [];
             data.types.forEach( t => {

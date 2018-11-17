@@ -1,6 +1,9 @@
 // Imported query selectors file (base)
 import { el, displaySpinner, clearSpinner } from './base';
 
+// Import Styling
+import '../sass/main.scss';
+
 // Models
 import Search from './models/Search';
 import Pokemon from './models/Pokemon';
@@ -98,7 +101,6 @@ pokemonCtrlEvents.forEach(e => {
 //-----------------------------------------//
 //-----------------------------------------//
 //-----------------------------------------//
-
 
 // CART CONTROLLER
 const cartCtrl = () => {

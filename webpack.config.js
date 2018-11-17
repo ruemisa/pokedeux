@@ -19,7 +19,7 @@ module.exports = {
             template: './src/index.html'
         })
     ],
-    // Babel
+    // Babel & Sass
     module: {
         rules: [
             {
@@ -28,7 +28,22 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
             }
+
         ]
     }
 };
