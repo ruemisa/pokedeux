@@ -1,0 +1,15 @@
+// HEADER COMPONENTS
+
+.logo-box {
+    border: 1px solid red;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+
+    &__logo {
+        height: 3rem;
+        width: auto;
+    }
+}

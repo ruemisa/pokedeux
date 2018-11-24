@@ -16,6 +16,9 @@ import * as pokemon_view from './views/pokemon_view';
 import * as cart_view from './views/cart_view';
 import * as vault_view from './views/vault_view';
 
+// Images
+import logoIMG from '../img/logo.png';
+
 // APPLICATION STATE 
 const state = {};
 // SEARCH CONTROLLER 
@@ -199,3 +202,7 @@ window.addEventListener('load', () => {
         vault_view.displaySaved(item);
     });
 });
+
+// FOR IMAGES
+const logo = document.getElementById('logo');
+logo.src = logoIMG;
