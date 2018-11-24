@@ -1,3 +1,35 @@
+:root {
+
+    // COLORS
+
+    // Blacks
+
+    --color-black-1: #101010;
+    --color-black-2: #181818;
+    --color-black-3: #212121;
+    --color-black-4: #292929;
+
+    // Whites 
+    --color-white-1: #fefefe;
+    --color-white-2: #fdfdfd;
+    --color-white-3: #fcfcfc;
+
+    // Greys 
+
+    --color-grey-light-1: #f0f0f0;
+    --color-grey-light-2: #f9f9f9;
+    --color-grey-light-3: #efefef;
+    --color-grey-light-4: #eaeaea;
+
+    --color-grey-dark-1: #cfcfcf;
+    --color-grey-dark-2: #cbcbcb;
+    --color-grey-dark-3: #bdbdbd;
+    --color-grey-dark-4: #ababab;
+
+    // Accent Colors
+}
+
+
 *,
 *::before,
 *::after {
@@ -12,6 +44,8 @@ html {
 
 body {
     padding: 3rem;
+    background-color: var(--color-white-3);
+    color: var(--color-grey-dark-4);
 }
 
 a {
