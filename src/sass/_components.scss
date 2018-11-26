@@ -1,15 +1,78 @@
 // HEADER COMPONENTS
 
-.logo-box {
-    border: 1px solid red;
-    height: 100%;
-    width: 100%;
-}
 
 .header {
 
     &__logo {
-        height: 3rem;
-        width: auto;
+        height: 4.5rem;
+    }
+
+    &__nav {
+        
+        &-list {
+
+        }
+
+        &-item {
+            display: inline-block;
+        }
+
+        
     }
 }
+
+.search {
+    flex: 0 0 40%;
+
+    &__input {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: var(--color-grey-light-3);
+        border: none;
+        border-radius: 50rem;
+        padding: 1rem 2rem;
+        margin-right: -2.5rem;
+        width: 80%;
+        transition: all .5s;
+
+        &:focus {
+            outline: none;
+            width: 100%;
+        }
+    }
+
+    &__btn {
+        border: none;
+        color: inherit;
+        background-color: var(--color-grey-light-3);
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            transform: translateY(0.2rem);
+        }
+    }
+}
+
+// SEARCH RESULTS
+
+.results {
+    background-color: green;
+}
+
+
+// POKEMON DETAILS
+
+.pokemon {
+    background-color:blue;
+}
+
+// CART
+
+.cart {
+    background-color: orange;
+}
+

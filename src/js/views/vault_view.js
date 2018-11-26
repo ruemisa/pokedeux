@@ -9,10 +9,10 @@ export const toggleSave = isSaved => {
 };
 
 // Toggle Vault Menu Handler
-export const toggleVaultBtn = count => {
-    // To make menu visible or not depending on the number of vault items present
-    el.vaultToggler.style.visibility = count > 0 ? 'visible' : 'hidden';
-};
+// export const toggleVaultBtn = count => {
+//     // To make menu visible or not depending on the number of vault items present
+//     el.vaultToggler.style.visibility = count > 0 ? 'visible' : 'hidden';
+// };
 
 // Render Saved Items to UI
 export const displaySaved = saved => {
