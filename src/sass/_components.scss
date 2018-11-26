@@ -8,16 +8,66 @@
     }
 
     &__nav {
-        
-        &-list {
 
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex: 0 0 20%;
+
+        &-list {
+        font-size: 2rem;
         }
 
         &-item {
             display: inline-block;
-        }
+            margin-left: 3rem;
+            transition: all .3s;
 
-        
+            &--red {
+                color: var(--color-red-accent-dark-3);
+
+                &:hover {
+                    color: var(--color-red-accent-light-2);
+                }
+            }
+
+            &--yellow {
+                color: var(--color-yellow-accent-dark-1);
+                
+                &:hover {
+                    color: var(--color-yellow-accent-light-3);
+                }
+            }
+
+            &--blue {
+                color: var(--color-blue-accent-dark-2);
+
+                &:hover {
+                    color: var(--color-blue-accent-light-1);
+                }
+            }
+
+            &:hover {
+                transform: translateY(-1rem);
+                text-shadow: 1rem 1.2rem 1.2rem rgba(0, 0, 0, 1);
+            }
+
+            &:active {
+                transform: translateY(-0.5rem);
+                text-shadow: .5rem .8rem .5rem rgba(0, 0, 0, 1);
+            }
+        }
+    }
+}
+
+// VAULT
+.vault {
+    &__field {
+        // visibility: hidden;
+        &>i {
+            font-size: 2rem;
+            color: var(--color-grey-light-1);
+        }
     }
 }
 
@@ -31,7 +81,7 @@
         background-color: var(--color-grey-light-3);
         border: none;
         border-radius: 50rem;
-        padding: 1rem 2rem;
+        padding: .5rem 2rem;
         margin-right: -2.5rem;
         width: 80%;
         transition: all .5s;
