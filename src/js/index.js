@@ -171,6 +171,14 @@ const vaultCtrl = () => {
     vault_view.toggleVaultBtn(state.vault.getSavedCount());
 };
 
+// IMAGES CONTROLLER
+
+const imgCtrl = () => {
+    // For the Logo
+    el.logo.src = logoIMG;
+};
+
+
 //-----------------------------------------//
 //-----------------------------------------//
 //-----------------------------------------//
@@ -189,6 +197,7 @@ el.pokemonRender.addEventListener('click', e => {
 
 // When the page loads/reloads, restore the vault items
 window.addEventListener('load', () => {
+    imgCtrl();
     state.vault = new Vault();
 
     // Fill it up with data from storage
@@ -203,6 +212,3 @@ window.addEventListener('load', () => {
     });
 });
 
-// FOR IMAGES
-const logo = document.getElementById('logo');
-logo.src = logoIMG;
