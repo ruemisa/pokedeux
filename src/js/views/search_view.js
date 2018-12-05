@@ -24,7 +24,7 @@ const displayPokemon = pokemon => {
                 <img src="${pokemon.sprites.front_default}" alt="${pokemon.name} sprite" class="results__img"> 
             </figure>    
             <div class="results__text">
-                <h4 class="results__name">${pokemon.id} ${pokemon.name}</h4>
+                <h4 class="results__name headline-4">${pokemon.id} ${pokemon.name}</h4>
                 <ul class="results__list">
                     ${pokemonType.map( t => {
                         return `<li>${t}</li>`;
