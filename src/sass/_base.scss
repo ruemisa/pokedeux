@@ -67,8 +67,11 @@ html {
 }
 
 body {
-    padding: 3rem;
-    background-color: var(--color-grey-dark-4);
+    padding: 3rem 6.5rem;
+    // TODO: Change colors
+    background: linear-gradient(to right bottom, var(--color-grey-dark-1) 0%, var(--color-grey-dark-1) 50%,white 50%,white 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
     color: var(--color-grey-dark-4);
 }
 

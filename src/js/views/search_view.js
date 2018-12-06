@@ -24,10 +24,10 @@ const displayPokemon = pokemon => {
                 <img src="${pokemon.sprites.front_default}" alt="${pokemon.name} sprite" class="results__img"> 
             </figure>    
             <div class="results__text">
-                <h4 class="results__name headline-4">${pokemon.id} ${pokemon.name}</h4>
+                <h4 class="headline-4">${pokemon.id} ${pokemon.name}</h4>
                 <ul class="results__list">
                     ${pokemonType.map( t => {
-                        return `<li>${t}</li>`;
+                        return `<li class="results__item">${t}</li>`;
                     }).join('')}
                 </ul>
             </div>
@@ -41,6 +41,8 @@ const displayPokemon = pokemon => {
 
 // Display Query Result in UI
 export const displayResult = pokemon => {
+    // Change visibility of seach result box to visible if there is a result
+    el.searchResult.style.visibility = 'visible';
     displayPokemon(pokemon);
 };
 

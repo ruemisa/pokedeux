@@ -110,22 +110,67 @@
 // SEARCH RESULTS
 
 .results {
+    grid-area: res;
     // TODO: Edit border
     border: 1px solid var(--color-grey-dark-1);
     background-color: var(--color-grey-light-3);
-    padding: 3rem 1rem;
+    visibility: hidden;
+
+    &__detail {
+        // PASS
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:link,
+        &:visited {
+            // ! FOR TESTING
+            color: black;
+        }
+
+        &--active {
+
+        }
+    } 
+
+    &__fig {
+
+    }
+
+    &__img {
+
+    }
+
+    &__text {
+
+    }
+
+    &__list {
+
+    }
+
+    &__item {
+
+    }
+
+
 }
 
 
 // POKEMON DETAILS
 
 .pokemon {
+    grid-area: info;
     background-color:blue;
 }
 
 // CART
 
 .cart {
+    grid-area: cart;
     background-color: orange;
 }
 

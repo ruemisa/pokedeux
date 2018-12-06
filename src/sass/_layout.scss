@@ -4,6 +4,7 @@
 
 .container {
     background-color: var(--color-white-3);
+    box-shadow: 0.3rem 0.3rem 2rem var(--color-grey-dark-1);
     display: grid;
     grid-template-columns: [full-start] minmax(5rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(5rem, 1fr) [full-end];
     grid-row-gap: 1.5rem;
@@ -32,8 +33,12 @@
     grid-column: center-start / center-end;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(10rem, auto);
-    grid-column-gap: 1.5rem;
+    // TODO: Adjust this accordingly once content is populated properly
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: 
+    'res res cart'
+    'info info cart';
+    grid-gap: 1.5rem;
     min-height: 50rem;
 }
 

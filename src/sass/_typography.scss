@@ -7,3 +7,17 @@ body {
     font-weight: 400;
     line-height: 1.4;
 }
+
+// FOR ALL HEADER TAGS
+
+.headline {
+
+    &-2 {
+
+    }
+
+    &-4 {
+        font-size: 2rem;
+        text-transform: capitalize;
+    }
+}
