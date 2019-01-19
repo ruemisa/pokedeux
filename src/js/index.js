@@ -211,7 +211,7 @@ const firstHero = () => {
 
     setTimeout(() => {
         secondHero();
-    }, 3000)
+    }, 5000)
 };
 
 const secondHero = () => {
@@ -219,7 +219,7 @@ const secondHero = () => {
 
     setTimeout(() => {
         thirdHero();
-    }, 3000);
+    }, 5000);
 };
 
 const thirdHero = () => {
@@ -227,7 +227,7 @@ const thirdHero = () => {
 
     setTimeout(() => {
         firstHero();
-    }, 3000);
+    }, 5000);
 };
 
 // firstHero();
