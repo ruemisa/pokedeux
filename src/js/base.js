@@ -9,7 +9,8 @@ export const el = {
     pokemonRender: document.querySelector('.pokemon__details'),
     cart: document.querySelector('.cart__list'),
     vaultToggler: document.querySelector('.vault__field'),
-    vaultList: document.querySelector('.vault__list')
+    vaultList: document.querySelector('.vault__list'),
+    heroImage: document.querySelector('.hero')
 };
 
 // For all CSS Classes and IDs

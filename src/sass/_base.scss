@@ -14,7 +14,7 @@ html {
 }
 
 body {
-    
+    color: #ccc;
 }
 
 
@@ -25,5 +25,12 @@ a {
 
 li {
     list-style: none;
+}
+
+// Test
+.hero {
+    // Temporary
+    height: 105vh;
+    background-repeat: no-repeat;
 }
 

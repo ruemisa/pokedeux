@@ -16,6 +16,11 @@ import * as pokemon_view from './views/pokemon_view';
 import * as cart_view from './views/cart_view';
 import * as vault_view from './views/vault_view';
 
+// Images
+import heroOne from '../img/hero-img-1.jpg';
+import heroTwo from '../img/hero-img-2.jpg';
+import heroThree from '../img/hero-img-3.jpg';
+
 // APPLICATION STATE 
 const state = {};
 // SEARCH CONTROLLER 
@@ -200,3 +205,29 @@ window.addEventListener('load', () => {
     });
 });
 
+// Tests
+const firstHero = () => {
+    el.heroImage.style.backgroundImage = `url(${heroOne})`;
+
+    setTimeout(() => {
+        secondHero();
+    }, 3000)
+};
+
+const secondHero = () => {
+    el.heroImage.style.backgroundImage = `url(${heroTwo})`;
+
+    setTimeout(() => {
+        thirdHero();
+    }, 3000);
+};
+
+const thirdHero = () => {
+    el.heroImage.style.backgroundImage = `url(${heroThree})`;
+
+    setTimeout(() => {
+        firstHero();
+    }, 3000);
+};
+
+// firstHero();
