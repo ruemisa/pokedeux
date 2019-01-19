@@ -16,9 +16,6 @@ import * as pokemon_view from './views/pokemon_view';
 import * as cart_view from './views/cart_view';
 import * as vault_view from './views/vault_view';
 
-// Images
-import logoIMG from '../img/logo.png';
-
 // APPLICATION STATE 
 const state = {};
 // SEARCH CONTROLLER 
@@ -170,14 +167,6 @@ const vaultCtrl = () => {
     }
     vault_view.toggleVaultBtn(state.vault.getSavedCount());
 };
-
-// IMAGES CONTROLLER
-
-const imgCtrl = () => {
-    // For the Logo
-    el.logo.src = logoIMG;
-};
-
 
 //-----------------------------------------//
 //-----------------------------------------//
