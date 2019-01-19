@@ -2,10 +2,9 @@ import { el } from '../base';
 
 // Toggle Save Button Handler
 export const toggleSave = isSaved => {
-    // TODO: IMPROVE changes to UI Button
-    let textChange = isSaved ? 'Remove from Vault' : 'Add to Vault';
+    let textChange = isSaved ? 'fas fa-bookmark' : 'far fa-bookmark';
     // Set it as text of button
-    document.querySelector('.pokemon__save').innerHTML = textChange;
+    document.querySelector('.pokemon__save i').className = textChange;
 };
 
 // Toggle Vault Menu Handler

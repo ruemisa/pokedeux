@@ -186,7 +186,6 @@ el.pokemonRender.addEventListener('click', e => {
 
 // When the page loads/reloads, restore the vault items
 window.addEventListener('load', () => {
-    imgCtrl();
     state.vault = new Vault();
 
     // Fill it up with data from storage

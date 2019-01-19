@@ -24,9 +24,9 @@ export const renderPokemon = (pokemon, isSaved) => {
                 }).join('')}
             </ul>
         </div>
-        <button class="pokemon__save btn">
-            ${isSaved ? 'Remove from Vault' : 'Add to Vault'}
-        </button>
+        <div class="pokemon__save">
+            <i class="${isSaved ? 'fas fa-bookmark' : 'far fa-bookmark'}"></i>
+        </div>
         <button class="pokemon__btn btn">
             Add
         </button>
