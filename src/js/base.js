@@ -10,7 +10,7 @@ export const el = {
     cart: document.querySelector('.cart__list'),
     vaultToggler: document.querySelector('.vault__field'),
     vaultList: document.querySelector('.vault__list'),
-    heroImage: document.querySelector('.hero')
+    logo: document.querySelector('.header__logo')
 };
 
 // For all CSS Classes and IDs

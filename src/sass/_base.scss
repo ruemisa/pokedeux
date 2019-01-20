@@ -27,19 +27,3 @@ li {
     list-style: none;
 }
 
-// Test
-.hero {
-    // Temporary
-    height: 105vh;
-    background-repeat: no-repeat;
-    animation: fade 5s infinite;
-}
-
-@keyframes fade {
-    0% {opacity: 0}
-
-    50% {opacity: 1}
-
-    100% {opacity: 0}
-}
-

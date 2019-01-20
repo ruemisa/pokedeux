@@ -17,9 +17,7 @@ import * as cart_view from './views/cart_view';
 import * as vault_view from './views/vault_view';
 
 // Images
-import heroOne from '../img/hero-img-1.jpg';
-import heroTwo from '../img/hero-img-2.jpg';
-import heroThree from '../img/hero-img-3.jpg';
+import logoIMG from '../img/logo.png';
 
 // APPLICATION STATE 
 const state = {};
@@ -177,6 +175,15 @@ const vaultCtrl = () => {
 //-----------------------------------------//
 //-----------------------------------------//
 
+const logoCtrl = () => {
+    // For the logo
+    el.logo.src = logoIMG;
+}
+
+//-----------------------------------------//
+//-----------------------------------------//
+//-----------------------------------------//
+
 // EVENT HANDLERS related to Pokemon Object
 el.pokemonRender.addEventListener('click', e => {
     // Matches class and all child el
@@ -191,6 +198,10 @@ el.pokemonRender.addEventListener('click', e => {
 
 // When the page loads/reloads, restore the vault items
 window.addEventListener('load', () => {
+    // Load the Logo
+    logoCtrl();
+    
+    // Create new instance of vault in state
     state.vault = new Vault();
 
     // Fill it up with data from storage
@@ -205,29 +216,3 @@ window.addEventListener('load', () => {
     });
 });
 
-// Tests
-const firstHero = () => {
-    el.heroImage.style.backgroundImage = `url(${heroOne})`;
-
-    setTimeout(() => {
-        secondHero();
-    }, 5000)
-};
-
-const secondHero = () => {
-    el.heroImage.style.backgroundImage = `url(${heroTwo})`;
-
-    setTimeout(() => {
-        thirdHero();
-    }, 5000);
-};
-
-const thirdHero = () => {
-    el.heroImage.style.backgroundImage = `url(${heroThree})`;
-
-    setTimeout(() => {
-        firstHero();
-    }, 5000);
-};
-
-// firstHero();

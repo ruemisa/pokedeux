@@ -1,0 +1,42 @@
+//------------------------------------------------// 
+//------------------HEADER HERO-------------------// 
+//------------------------------------------------// 
+
+.header {
+    position: relative;
+    height: 100vh;
+    background-image: url('../img/hero-img-1.jpg');
+    background-repeat: no-repeat;
+    // Animation
+    animation-name: changeHero;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: .8s;
+
+    &__logo {
+        width: 20rem;
+        height: 10rem;
+        margin-top: 2rem;
+        margin-left: 3rem;
+    }
+}
+
+
+// HEADER HERO ANIMATION //
+
+@keyframes changeHero {
+    0% {
+        background-image: url('../img/hero-img-1.jpg');
+    }
+
+    50% {
+        background-image: url('../img/hero-img-2.jpg');
+    }
+
+    100% {
+        background-image: url('../img/hero-img-3.jpg');
+    }
+}
+
+
