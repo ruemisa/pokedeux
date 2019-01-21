@@ -1,14 +1,52 @@
 //------------------------------------------------// 
-//-----------------GRID WRAPPER-------------------// 
-//------------------------------------------------// 
-
-
-
-
-
-//------------------------------------------------// 
 //-----------------HEADER AREA--------------------// 
 //------------------------------------------------// 
+
+.header {
+    position: relative;
+    height: 100vh;
+
+    // Lighter opacity for background images
+    &::after {
+        content: "";
+        opacity: .6;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background-image: url('../img/hero-img-1.jpg');
+        background-repeat: no-repeat;
+        // Animation
+        animation-name: changeHero;
+        animation-duration: 3.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-delay: .8s;
+    }
+}
+
+
+// HEADER HERO ANIMATION //
+
+@keyframes changeHero {
+    0% {
+        background-image: url('../img/hero-img-1.jpg');
+    }
+
+    50% {
+        background-image: url('../img/hero-img-2.jpg');
+    }
+
+    100% {
+        background-image: url('../img/hero-img-3.jpg');
+    }
+}
+
+
 
 
 

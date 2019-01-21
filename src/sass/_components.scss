@@ -1,18 +1,13 @@
 //------------------------------------------------// 
-//------------------HEADER HERO-------------------// 
+//--------------HEADER COMPONENTS-----------------// 
 //------------------------------------------------// 
 
+// Header
 .header {
     position: relative;
-    height: 100vh;
-    background-image: url('../img/hero-img-1.jpg');
-    background-repeat: no-repeat;
-    // Animation
-    animation-name: changeHero;
-    animation-duration: 3.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-delay: .8s;
+    // To push the social media links to the top right without absolute positioning
+    display: flex;
+    justify-content: space-between;
 
     &__logo {
         width: 20rem;
@@ -20,23 +15,135 @@
         margin-top: 2rem;
         margin-left: 3rem;
     }
+
+    &__content {
+        position: absolute;
+        top: 40%;
+        left: 15%;
+        text-align: center;
+    }
+
+    &__text {
+        padding: 2rem 3rem;
+        letter-spacing: .3rem;
+        // TODO: Change this
+        color: orange;
+        margin-bottom: 1.5rem;
+    }
+
+    &__nav {
+        margin-top: 1rem;
+        margin-right: 2rem;
+
+        &-list {
+            display: inline-block;
+            font-size: 2rem;
+            padding: 2rem;
+            cursor: pointer;
+        }
+
+        &-item {
+            color: #fafafa;
+
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+
+            &--red:hover {
+                color: red;
+            }
+
+            &--yellow:hover {
+                color: yellow;
+            }
+
+            &--blue:hover {
+                color: blue;
+            }
+        }
+
+        &-link {
+            &,
+            &:link,
+            &:visited {
+                display: inline-block;
+                text-shadow: 0 .5rem 1rem rgba(0, 0, 0, .7);
+                transition: all .5s;
+            }
+
+            &:hover {
+                transform: scale(1.5);
+                text-shadow: 0 1rem 1.2rem rgba(0, 0, 0, .5);
+            }
+
+            &:active {
+                transform: scale(1.2);
+                text-shadow: 0 .75rem 1rem rgba(0, 0, 0, .6);
+            }
+
+        }
+
+    }
+}
+
+//------------------------------------------------// 
+//---------------------BUTTON---------------------// 
+//------------------------------------------------//
+
+.btn {
+    &,
+    &:link,
+    &:visited {
+        display: inline-block;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
+    }
+
+    &--cta {
+        cursor: pointer;
+        position: relative;
+        font-size: 1.5rem;
+        border-radius: 50rem;
+        color: #333;
+        background-color: #eee;
+        transition: all .5s;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 50rem;
+            transition: all .6s;
+        }
+
+        &:hover {
+            &::after {
+                background-color: #eee;
+                opacity: 0;
+                transform: scaleX(1.7) scaleY(2);
+            }
+        }
+    
+    }
+
+    &:hover {
+        transform: translateY(-1rem);
+        box-shadow: .5rem 1rem 2rem rgba(0, 0, 0, .5);
+    }
+
+    &:active {
+        transform: translateY(-.5rem);
+        box-shadow: .2rem .8rem 1rem rgba(0, 0, 0, .7);
+    }
 }
 
 
-// HEADER HERO ANIMATION //
 
-@keyframes changeHero {
-    0% {
-        background-image: url('../img/hero-img-1.jpg');
-    }
-
-    50% {
-        background-image: url('../img/hero-img-2.jpg');
-    }
-
-    100% {
-        background-image: url('../img/hero-img-3.jpg');
-    }
-}
 
 
