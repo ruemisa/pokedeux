@@ -26,9 +26,13 @@
     &__text {
         padding: 2rem 3rem;
         letter-spacing: .3rem;
-        // TODO: Change this
-        color: orange;
+        color: $primary-1;
         margin-bottom: 1.5rem;
+
+        & > p {
+            font-size: 3rem;
+            font-weight: 400;
+        }
     }
 
     &__nav {
@@ -43,22 +47,22 @@
         }
 
         &-item {
-            color: #fafafa;
+            color: $white-1;
 
             &:not(:last-child) {
                 margin-bottom: 2rem;
             }
 
             &--red:hover {
-                color: red;
+                color: $red-2;
             }
 
             &--yellow:hover {
-                color: yellow;
+                color: $yellow-2;
             }
 
             &--blue:hover {
-                color: blue;
+                color: $blue-2;
             }
         }
 
@@ -67,18 +71,18 @@
             &:link,
             &:visited {
                 display: inline-block;
-                text-shadow: 0 .5rem 1rem rgba(0, 0, 0, .7);
+                text-shadow: $shadow-2;
                 transition: all .5s;
             }
 
             &:hover {
                 transform: scale(1.5);
-                text-shadow: 0 1rem 1.2rem rgba(0, 0, 0, .5);
+                text-shadow: $shadow-1;
             }
 
             &:active {
                 transform: scale(1.2);
-                text-shadow: 0 .75rem 1rem rgba(0, 0, 0, .6);
+                text-shadow: $shadow-3;
             }
 
         }
@@ -105,8 +109,8 @@
         position: relative;
         font-size: 1.5rem;
         border-radius: 50rem;
-        color: #333;
-        background-color: #eee;
+        color: $black-2;
+        background-color: $grey-1;
         transition: all .5s;
 
         &::after {
@@ -124,7 +128,7 @@
 
         &:hover {
             &::after {
-                background-color: #eee;
+                background-color: $grey-2;
                 opacity: 0;
                 transform: scaleX(1.7) scaleY(2);
             }
@@ -134,12 +138,13 @@
 
     &:hover {
         transform: translateY(-1rem);
-        box-shadow: .5rem 1rem 2rem rgba(0, 0, 0, .5);
+        box-shadow: $shadow-1;
     }
 
     &:active {
+        outline: none;
         transform: translateY(-.5rem);
-        box-shadow: .2rem .8rem 1rem rgba(0, 0, 0, .7);
+        box-shadow: $shadow-2;
     }
 }
 
