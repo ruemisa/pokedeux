@@ -19,11 +19,18 @@ body {
     }
 
     &-2 {
-
+        font-size: 3.5rem;
+        font-weight: 300;
     }
 
     &-4 {
         font-size: 2rem;
         text-transform: capitalize;
     }
+}
+
+// PARA
+.para {
+    font-size: 1.3rem;
+    line-height: 1.6;
 }

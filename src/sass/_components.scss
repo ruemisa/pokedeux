@@ -20,7 +20,10 @@
         position: absolute;
         top: 40%;
         left: 15%;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-transform: uppercase;
     }
 
     &__text {
@@ -28,10 +31,12 @@
         letter-spacing: .3rem;
         color: $primary-1;
         margin-bottom: 1.5rem;
+        text-align: center;
 
         & > p {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 400;
+            color: $grey-1;
         }
     }
 
@@ -88,6 +93,55 @@
         }
 
     }
+}
+
+//------------------------------------------------// 
+//--------------FEATURES COMPONENTS---------------// 
+//------------------------------------------------// 
+
+.features {
+
+    &__text {
+        padding: 1rem;
+        margin-bottom: 4rem;
+        letter-spacing: .4rem;
+        color: $primary-3;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        grid-gap: 5rem;
+        padding: 2rem 1rem;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem .5rem;
+        border: 1px solid $grey-2;
+        box-shadow: 0 .3rem .8rem rgba(150, 150, 150, .3);
+        transition: all .6s;
+
+        & > p {
+            padding: 2rem;
+        }
+
+        &:hover {
+            transform: translateY(-2.5rem);
+            box-shadow: .5rem 1.5rem 2rem rgba(150, 150, 150, .7);
+        }
+    }
+
+    &__icon {
+        color: $primary-3;
+        font-size: 5rem;
+        margin: 1.5rem 0;
+    }
+
+
+
+    
 }
 
 //------------------------------------------------// 
