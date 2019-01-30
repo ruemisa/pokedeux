@@ -11,7 +11,7 @@ body {
 // FOR ALL HEADER TAGS
 
 .headline {
-
+    
     &-1 {
         font-size: 4.5rem;
         font-weight: 400;
@@ -21,6 +21,7 @@ body {
     &-2 {
         font-size: 3.5rem;
         font-weight: 300;
+        text-transform: uppercase;
     }
 
     &-4 {
