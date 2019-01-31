@@ -145,6 +145,48 @@
 }
 
 //------------------------------------------------// 
+//---------------SEARCH COMPONENTS----------------// 
+//------------------------------------------------//
+
+.results {
+    // TODO: DO SOME LAYOUT RESEARCH
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    border: 1px solid red;
+    padding: 2rem 0;
+
+    &__input {
+        border: 1px solid $grey-2;
+        border-radius: 50rem;
+        padding: .2rem;
+        margin-right: -3.5rem;
+        width: 80%;
+        font-family: inherit;
+        font-size: 1.5rem;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 .3rem .8rem rgba(150, 150, 150, .3);
+        }
+    }
+
+    &__btn {
+        padding: .2rem 1rem;
+        background-color: inherit;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+//------------------------------------------------// 
 //---------------------BUTTON---------------------// 
 //------------------------------------------------//
 

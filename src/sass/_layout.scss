@@ -22,10 +22,10 @@
         background-repeat: no-repeat;
         // Animation
         animation-name: changeHero;
-        animation-duration: 3.5s;
+        animation-duration: 10s;
         animation-iteration-count: infinite;
         animation-direction: alternate;
-        animation-delay: .8s;
+        animation-timing-function: ease-in-out;
     }
 }
 
@@ -54,6 +54,7 @@
     display: grid;
     grid-template-columns: [full-start] minmax(5rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(5rem, 1fr) [full-end];
     padding: 2.5rem 1.5rem;
+    min-width: 100%;
 }
 
 //------------------------------------------------// 
@@ -73,6 +74,7 @@
 .results {
     grid-column: full-start / full-end;
     text-align: center;
+    // TODO: To make it overflow, use - margin
     margin: 2rem 0;
 }
 
